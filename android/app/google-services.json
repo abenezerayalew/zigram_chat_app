@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "856654403896",
+    "project_id": "zigram-chat-app",
+    "storage_bucket": "zigram-chat-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:856654403896:android:fd6624f6d74c87a5a9c9cd",
+        "android_client_info": {
+          "package_name": "com.example.zigram_chat_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "856654403896-dqrm2usgvkp703pb9voae3et3j0k7f3k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHCkrStJaSA64XoXBW6IQifkVSYVRfpwE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "856654403896-dqrm2usgvkp703pb9voae3et3j0k7f3k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
