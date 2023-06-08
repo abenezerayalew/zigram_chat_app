@@ -35,6 +35,15 @@ class _HomeScreenState extends State<HomeScreen> {
             ]),
           ),
           floatingActionButton: FloatingActionButton(
+            shape: ShapeBorder.lerp(
+              RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30),
+              ),
+              RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30),
+              ),
+              0,
+            ),
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
                 return const MessagesScreens();

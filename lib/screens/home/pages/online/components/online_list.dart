@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/material.dart';
+
+import '../../../../../screens/messages/message_screen.dart';
+import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-import '../../constants.dart';
-import 'recent_card.dart';
+import '../../../../../constants.dart';
+import 'online_card.dart';
 
 final Timestamp time = Timestamp.now();
 
 // MessageBubble messageBubble = MessageBubble();
-class RecentList extends StatelessWidget {
-  const RecentList({super.key});
+class OnlineList extends StatelessWidget {
+  const OnlineList({super.key});
   Future<User?> _getCurrentUser() async {
     return FirebaseAuth.instance.currentUser;
   }
@@ -60,33 +65,21 @@ class RecentList extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.only(top: kDefaultPadding),
                     child: ListView.builder(
-                      itemCount: chatdocs.length,
-                      itemBuilder: (context, index) => Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          ContactRecent(
-                            image: chatdocs[index]['userImage'],
-                            name: chatdocs[index]['username'],
-                            time: chatdocs[index]['createdAt'],
-                            message: chatdocs[index]['text'],
-                          ),
-                        ],
-                      ),
-                    ),
+                        itemCount: chatdocs.length,
+                        itemBuilder: (context, index) {
+                          return Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              OnlineCard(
+                                  image: chatdocs[index]['userImage'],
+                                  name: chatdocs[index]['username'],
+                                  message: 'Active Now'),
+                            ],
+                          );
+                        }),
                   ),
                 ));
               });
         });
   }
 }
-
-// const Padding(
-//                             padding: EdgeInsets.only(left: 10.0),
-//                             child: Text(
-//                               'Recent Chats',
-//                               style: TextStyle(
-//                                 fontSize: 21,
-//                                 fontWeight: FontWeight.w500,
-//                               ),
-//                             ),
-//                           ),

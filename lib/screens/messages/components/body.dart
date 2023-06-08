@@ -11,8 +11,17 @@ class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Column(
-        children: const [
+        child: Container(
+      color: Colors.black,
+      child: Stack(
+        children: [
+          Positioned.fill(
+              child: Opacity(
+            opacity: 0.3,
+            child: Image.asset('assets/images/back.jpg', fit: BoxFit.cover),
+          )),
+          // child: Column(
+          //   children: const [
           // Expanded(
           //   child: Padding(
           //     padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
@@ -23,10 +32,12 @@ class Body extends StatelessWidget {
           //     ),
           //   ),
           // ),
-          MessageStream(),
-          ChatInputField(),
+          Column(children: const [
+            MessageStream(),
+            ChatInputField(),
+          ])
         ],
       ),
-    );
+    ));
   }
 }

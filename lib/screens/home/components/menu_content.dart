@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../contact_screen.dart';
-import '../../message_screen.dart';
-import '../../online_screen.dart';
-import '../../people_nearby.dart';
+import '../pages/contacts/contact_screen.dart';
+import '../pages/messages/message_screen.dart';
+import '../pages/online/online_screen.dart';
+import '../pages/nearby/people_nearby.dart';
 
 class MenuContent extends StatelessWidget {
   const MenuContent({
@@ -22,7 +22,7 @@ class MenuContent extends StatelessWidget {
                 borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(30),
                     topRight: Radius.circular(30.0))),
-            child: const TabBarView(
+            child: TabBarView(
               children: [
                 ///******************** 1^St Tab ****************************************************/
                 MessageScreen(),

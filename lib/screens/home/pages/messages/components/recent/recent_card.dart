@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
-import '../../screens/messages/message_screen.dart';
+import '../../../../../messages/message_screen.dart';
 
 class ContactRecent extends StatelessWidget {
   const ContactRecent(

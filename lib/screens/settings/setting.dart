@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'components/profile.dart';
+import 'components/switch_theme.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});
@@ -13,6 +14,7 @@ class SettingsPage extends StatelessWidget {
       ),
       body: ListView(
         children: [
+          const MySwitchTheme(),
           ListTile(
             leading: Icon(Icons.person),
             title: Text('Profile'),

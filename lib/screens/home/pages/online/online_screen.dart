@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:zigram_chat_app/screens/home/pages/online/components/online_list.dart';
 
-import '../components/favorite/favorite_list_card.dart';
-import '../components/recent/recent_list_card.dart';
+import '../messages/components/favorite/favorite_list_card.dart';
+import '../messages/components/recent/recent_list_card.dart';
 
-class PeopleNearbyScreen extends StatefulWidget {
-  const PeopleNearbyScreen({super.key});
+class OnlineScreen extends StatefulWidget {
+  const OnlineScreen({super.key});
 
   static String id = 'home_screen';
   @override
-  State<PeopleNearbyScreen> createState() => _PeopleNearbyScreenState();
+  State<OnlineScreen> createState() => _OnlineScreenState();
 }
 
-class _PeopleNearbyScreenState extends State<PeopleNearbyScreen> {
+class _OnlineScreenState extends State<OnlineScreen> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -20,13 +21,13 @@ class _PeopleNearbyScreenState extends State<PeopleNearbyScreen> {
         Padding(
           padding: EdgeInsets.all(15.0),
           child: Image.asset(
-            'assets/images/loca.gif',
+            'assets/images/ola.gif',
             width: 150,
             height: 150,
           ),
         ),
         const Text(
-          'People Nearby',
+          'Online Now',
           style: TextStyle(
             fontSize: 21,
             fontWeight: FontWeight.bold,
@@ -35,12 +36,13 @@ class _PeopleNearbyScreenState extends State<PeopleNearbyScreen> {
         const Padding(
           padding: EdgeInsets.all(18.0),
           child: Text(
-            'Connect, exchange contacts, forge friendships nearby.',
+            'chat with your friends and family',
             textAlign: TextAlign.center,
             style: TextStyle(color: Colors.grey),
           ),
         ),
-        const RecentList()
+        const OnlineList()
+        // const OnlineChecker()
       ],
     );
   }

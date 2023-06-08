@@ -44,8 +44,9 @@ class _ChatInputFieldState extends State<ChatInputField> {
         horizontal: kDefaultPadding,
         vertical: kDefaultPadding / 2,
       ),
-      decoration: BoxDecoration(
-        color: Theme.of(context).scaffoldBackgroundColor,
+      decoration: const BoxDecoration(
+        // color: Theme.of(context).scaffoldBackgroundColor,
+        color: Colors.transparent,
       ),
       child: Row(
         children: [
@@ -81,8 +82,13 @@ class _ChatInputFieldState extends State<ChatInputField> {
                           _enteredMessage = value;
                         });
                       },
-                      decoration: const InputDecoration(
+                      decoration: InputDecoration(
                         hintText: "Type message",
+                        fillColor: Theme.of(context)
+                            .textTheme
+                            .bodyLarge!
+                            .color!
+                            .withOpacity(0.64),
                         border: InputBorder.none,
                       ),
                     ),

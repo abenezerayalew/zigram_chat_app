@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:zigram_chat_app/screens/auth/mobile/main_phone_verification_page.dart';
 import 'package:zigram_chat_app/screens/home/home_screen.dart';
 import 'firebase_options.dart';
+import 'intro_screen.dart';
 import 'screens/auth/email/auth_screen.dart';
 import 'screens/messages/message_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -10,7 +11,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -26,11 +27,11 @@ class MyApp extends StatelessWidget {
         builder: (_, ThemeMode currentMode, __) {
           return MaterialApp(
               debugShowCheckedModeBanner: false,
-              theme: ThemeData(
+              theme: ThemeData.light().copyWith(
                 useMaterial3: true,
                 textTheme: const TextTheme(
-                  bodyLarge: TextStyle(color: Colors.black),
-                  bodyMedium: TextStyle(color: Colors.black),
+                  bodyLarge: TextStyle(color: Colors.white),
+                  bodyMedium: TextStyle(color: Colors.white),
                 ),
                 iconTheme: const IconThemeData(color: Colors.white),
                 appBarTheme:
@@ -79,6 +80,7 @@ class MyApp extends StatelessWidget {
                   return const AuthScreen();
                 },
               ));
+          // home: OnBoardingPage());
         });
   }
 }

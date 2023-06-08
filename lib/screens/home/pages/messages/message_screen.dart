@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../components/favorite/favorite_list_card.dart';
-import '../components/recent/recent_list_card.dart';
+import 'components/favorite/favorite_list_card.dart';
+import 'components/recent/recent_list_card.dart';
 
 class MessageScreen extends StatefulWidget {
   const MessageScreen({super.key});
