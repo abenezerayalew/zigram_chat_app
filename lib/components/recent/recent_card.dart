@@ -1,9 +1,20 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
+import '../../screens/messages/message_screen.dart';
+
 class ContactRecent extends StatelessWidget {
-  const ContactRecent({super.key, required this.image, required this.name});
+  const ContactRecent(
+      {super.key,
+      required this.image,
+      required this.name,
+      required this.time,
+      required this.message});
   final String image;
   final String name;
+  final Timestamp time;
+  final String message;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -16,22 +27,44 @@ class ContactRecent extends StatelessWidget {
       // color: Color(0XFF00BF6D),
       padding: const EdgeInsets.all(10),
       // margin: const EdgeInsets.only(10),
-      child: Row(
-        children: [
-          CircleAvatar(
-            radius: 30,
-            backgroundImage: AssetImage(image.toString()),
+      child: GestureDetector(
+        onTap: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context) {
+            return const MessagesScreens();
+          }));
+        },
+        child: Container(
+          color: Colors.transparent,
+          child: Row(
+            children: [
+              CircleAvatar(
+                radius: 30,
+                backgroundImage: NetworkImage(image),
+              ),
+              const SizedBox(
+                width: 10,
+              ),
+              Column(children: [
+                Text(name.toUpperCase()),
+                Container(
+                  width: 70,
+                  child: Text(
+                    '${message}...',
+                    // textAlign: TextAlign.start,
+                    maxLines: 1, // Limit the text to a single line
+                    overflow: TextOverflow
+                        .visible, // Show '...' at the end if the text overflows
+                    style: TextStyle(fontSize: 12),
+                    // softWrap: true,
+                    textScaleFactor: 1.0,
+                  ),
+                ),
+              ]),
+              const Spacer(),
+              Text(time.toDate().toString().substring(0, 10)),
+            ],
           ),
-          const SizedBox(
-            width: 10,
-          ),
-          Column(children: [
-            Text(name.toUpperCase()),
-            const Text('Hello'),
-          ]),
-          const Spacer(),
-          const Text('12:00'),
-        ],
+        ),
       ),
     );
   }

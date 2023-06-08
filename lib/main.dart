@@ -25,6 +25,7 @@ class MyApp extends StatelessWidget {
         valueListenable: themeNotifier,
         builder: (_, ThemeMode currentMode, __) {
           return MaterialApp(
+              debugShowCheckedModeBanner: false,
               theme: ThemeData(
                 useMaterial3: true,
                 textTheme: const TextTheme(
@@ -55,7 +56,7 @@ class MyApp extends StatelessWidget {
                     secondaryContainer: const Color(0XFF101427),
                   )),
               themeMode: currentMode,
-              initialRoute: AuthPhone.id,
+              // initialRoute: AuthPhone.id,
               // initialRoute: HomeScreen.id,
               // routes: {
               //   HomeScreen.id: (context) => const HomeScreen(),

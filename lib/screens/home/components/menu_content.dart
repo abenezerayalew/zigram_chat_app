@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../contact_screen.dart';
 import '../../message_screen.dart';
+import '../../online_screen.dart';
 import '../../people_nearby.dart';
 
 class MenuContent extends StatelessWidget {
@@ -31,11 +33,11 @@ class MenuContent extends StatelessWidget {
 
                 ///******************** 3^rd Tab ****************************************************/
 
-                MessageScreen(),
+                OnlineScreen(),
 
                 ///********************** 4^th Tab *************************************************/
 
-                MessageScreen(),
+                ContactPage()
               ],
             ),
           ),

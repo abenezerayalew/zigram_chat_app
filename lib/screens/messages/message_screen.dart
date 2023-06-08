@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:zigram_chat_app/screens/messages/user_profile.dart';
-import '/constants.dart';
+import '../view_contact.dart';
 import 'package:flutter/material.dart';
 
 import 'components/body.dart';
@@ -14,17 +14,16 @@ class MessagesScreens extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: buildAppBar(),
+      appBar: buildAppBar(context),
       body: const Body(),
     );
   }
 
-  AppBar buildAppBar() {
+  AppBar buildAppBar(BuildContext context) {
     return AppBar(
       automaticallyImplyLeading: false,
       title: const UserProfile(),
       actions: [
-        //*----------------------------------
         DropdownButton(
           underline: Container(),
           icon: const Icon(
@@ -34,21 +33,25 @@ class MessagesScreens extends StatelessWidget {
             if (newValue == 'logout') {
               FirebaseAuth.instance.signOut();
             }
-            if (newValue == 'ViewContactPage') {}
-            // ViewContactPage
+            if (newValue == 'ViewContactPage') {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const ViewContactPage()),
+              );
+            }
           },
           items: const [
             DropdownMenuItem(
-              value: 'logoutPage',
+              value: 'logout',
               child: Text('Logout'),
             ),
             DropdownMenuItem(
               value: 'ViewContactPage',
-              child: Text('ViewContact'),
+              child: Text('View Contact'),
             ),
           ],
-        )
-        //*----------------------------------------------
+        ),
       ],
     );
   }

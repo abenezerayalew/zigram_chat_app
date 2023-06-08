@@ -13,7 +13,7 @@ class FavoriteCard extends StatelessWidget {
         children: [
           CircleAvatar(
             radius: 30,
-            backgroundImage: AssetImage(image.toString()),
+            backgroundImage: NetworkImage(image),
           ),
           Text(name),
         ],

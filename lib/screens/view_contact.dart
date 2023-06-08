@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class ViewContactPage extends StatelessWidget {
   const ViewContactPage({super.key});
-
+  static const String id = 'view_contact_page';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
